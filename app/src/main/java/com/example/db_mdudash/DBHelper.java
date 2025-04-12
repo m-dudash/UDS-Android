@@ -46,6 +46,8 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+
+    //DORMITORY CRUD ====================
     public long addDormitory(String name, String address){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -82,4 +84,51 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
 
+    //ROOM CRUD =========================
+    public long addRoom(int dormitoryId, String number, int beds, String equipment, int area, int isOccupied, double price){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(DBContract.Rooms.COLUMN_DORMITORY_ID, dormitoryId);
+        values.put(DBContract.Rooms.COLUMN_NUMBER, number);
+        values.put(DBContract.Rooms.COLUMN_EQUIPMENT, equipment);
+        values.put(DBContract.Rooms.COLUMN_AREA, area);
+        values.put(DBContract.Rooms.COLUMN_BEDS, beds);
+        values.put(DBContract.Rooms.COLUMN_IS_OCCUPIED, isOccupied);
+        values.put(DBContract.Rooms.COLUMN_PRICE, price);
+        long id = db.insert(DBContract.Rooms.TABLE_NAME, null, values);
+        db.close();
+        return id;
+    }
+
+    public Cursor getAllRooms(int dormitoryId){
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.query(DBContract.Rooms.TABLE_NAME, null, DBContract.Rooms.COLUMN_DORMITORY_ID + " = ?", new String[]{String.valueOf(dormitoryId)}, null,null,
+                DBContract.Rooms.COLUMN_IS_OCCUPIED + " ASC, " + DBContract.Rooms.COLUMN_NUMBER +" ASC");
+    }
+
+    public Cursor getRoomById(int id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.query(DBContract.Rooms.TABLE_NAME, null, DBContract.Rooms.COLUMN_ID + " = ?", new String[]{String.valueOf(id)}, null,null,null);
+    }
+
+    public int updateRoom(int id, String number, int beds, String equipment, int area, int isOccupied, double price){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(DBContract.Rooms.COLUMN_NUMBER, number);
+        values.put(DBContract.Rooms.COLUMN_EQUIPMENT, equipment);
+        values.put(DBContract.Rooms.COLUMN_AREA, area);
+        values.put(DBContract.Rooms.COLUMN_BEDS, beds);
+        values.put(DBContract.Rooms.COLUMN_IS_OCCUPIED, isOccupied);
+        values.put(DBContract.Rooms.COLUMN_PRICE, price);
+
+        int rowsAffected = db.update(DBContract.Rooms.TABLE_NAME, values, DBContract.Rooms.COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
+        db.close();
+        return rowsAffected;
+    }
+
+    public void deleteRoom(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(DBContract.Rooms.TABLE_NAME, DBContract.Rooms.COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
+        db.close();
+    }
 }
