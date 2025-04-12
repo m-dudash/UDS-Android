@@ -1,6 +1,8 @@
 package com.example.db_mdudash;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,13 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button signIn = findViewById(R.id.signIn);
+        signIn.setOnClickListener(evt -> signIn());
+    }
+
+    private void signIn(){
+        Intent intt = new Intent(this, DormitoriesActivity.class);
+        startActivity(intt);
     }
 }
