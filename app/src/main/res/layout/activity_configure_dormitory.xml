@@ -8,7 +8,7 @@
     tools:context=".ConfigureDormitoryActivity">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/signIn2"
+        android:id="@+id/saveDormButton"
         android:layout_width="413dp"
         android:layout_height="87dp"
         android:backgroundTint="#23B8CD"
@@ -56,10 +56,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.249"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/nameTextPlain" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/nameTextPlain"
         android:layout_width="211dp"
         android:layout_height="45dp"
         android:layout_marginTop="24dp"
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/addressTextPlain"
         android:layout_width="211dp"
         android:layout_height="45dp"
         android:layout_marginTop="24dp"

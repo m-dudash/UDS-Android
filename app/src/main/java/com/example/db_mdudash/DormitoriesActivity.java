@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -109,8 +110,10 @@ public class DormitoriesActivity extends AppCompatActivity {
             intt.putExtra("address", dormitory.getAddress());
             startActivity(intt);
         }else if(item.getItemId() == 1){
+            Toast.makeText(this, "Dormitory " + dormitory.getName() + " removed", Toast.LENGTH_SHORT).show();
             dbHelper.deleteDormitory(dormitory.getId());
             loadDormitories();
+
         }
         return true;
     }
