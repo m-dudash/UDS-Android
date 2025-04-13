@@ -8,7 +8,7 @@
     tools:context=".ConfigureDormitoryActivity">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/saveDormButton"
+        android:id="@+id/saveRoomButton"
         android:layout_width="413dp"
         android:layout_height="87dp"
         android:backgroundTint="#23B8CD"

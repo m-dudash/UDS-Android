@@ -31,6 +31,7 @@ public class RoomsActivity extends AppCompatActivity {
     private List<Room> rooms;
     private int dormId = -1;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -27,7 +27,7 @@ public class ConfigureDormitoryActivity extends AppCompatActivity {
 
         TextView nameText = findViewById(R.id.numberPlain);
         TextView addressText = findViewById(R.id.addressTextPlain);
-        Button saveButton = findViewById(R.id.saveDormButton);
+        Button saveButton = findViewById(R.id.saveRoomButton);
         DBHelper dbHelper = new DBHelper(this);
 
 
