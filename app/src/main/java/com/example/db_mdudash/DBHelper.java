@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
     public static final String DBname = "dormitory.db";
-    public static final int DBversion = 1;
+    public static final int DBversion = 2;
 
 
     public DBHelper(Context context) {
@@ -37,6 +37,21 @@ public class DBHelper extends SQLiteOpenHelper {
                 "FOREIGN KEY("+DBContract.Rooms.COLUMN_DORMITORY_ID+") REFERENCES "+
                 DBContract.Dormitories.TABLE_NAME+"("+DBContract.Dormitories.COLUMN_ID+"))";
         db.execSQL(createRoomsTable);
+
+        ContentValues values = new ContentValues();
+        values.put(DBContract.Dormitories.COLUMN_NAME, "SD Zobor");
+        values.put(DBContract.Dormitories.COLUMN_ADDRESS, "Drazovska 3/2 | Nitra-Zobor");
+        db.insert(DBContract.Dormitories.TABLE_NAME, null, values);
+
+        values.clear();
+        values.put(DBContract.Dormitories.COLUMN_NAME, "SD Brezovy Haj");
+        values.put(DBContract.Dormitories.COLUMN_ADDRESS, "Nabrezie mladeze 1 | Nitra-Chrenova");
+        db.insert(DBContract.Dormitories.TABLE_NAME, null, values);
+
+        values.clear();
+        values.put(DBContract.Dormitories.COLUMN_NAME, "SD Nitra");
+        values.put(DBContract.Dormitories.COLUMN_ADDRESS, "Slancikovej 595 | Nitra-Chrenova");
+        db.insert(DBContract.Dormitories.TABLE_NAME, null, values);
     }
 
     @Override
