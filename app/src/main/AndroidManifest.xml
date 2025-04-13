@@ -13,6 +13,12 @@
         android:theme="@style/Theme.DB_MDudash"
         tools:targetApi="31">
         <activity
+            android:name=".RoomDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfigureRoomActivity"
+            android:exported="false" />
+        <activity
             android:name=".ConfigureDormitoryActivity"
             android:exported="false" />
         <activity

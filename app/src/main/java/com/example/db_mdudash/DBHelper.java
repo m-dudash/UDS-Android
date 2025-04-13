@@ -8,9 +8,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.Random;
+
 public class DBHelper extends SQLiteOpenHelper {
     public static final String DBname = "dormitory.db";
-    public static final int DBversion = 2;
+    public static final int DBversion = 3;
+    Random rnd = new Random();
 
 
     public DBHelper(Context context) {
@@ -52,6 +55,23 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(DBContract.Dormitories.COLUMN_NAME, "SD Nitra");
         values.put(DBContract.Dormitories.COLUMN_ADDRESS, "Slancikovej 595 | Nitra-Chrenova");
         db.insert(DBContract.Dormitories.TABLE_NAME, null, values);
+
+        String[] prefixes = new String[]{"ZR", "BH", "NR"};
+        String[] postfixes = new String[]{"a", "b"};
+        for(int i = 1; i<=3;i++){
+            for(int j = 100; j<=200;j+=5){
+                values.clear();
+                String roomNumber = prefixes[i-1]+j+postfixes[j%2];
+                values.put(DBContract.Rooms.COLUMN_DORMITORY_ID, i);
+                values.put(DBContract.Rooms.COLUMN_NUMBER,roomNumber);
+                values.put(DBContract.Rooms.COLUMN_BEDS,j%2);
+                values.put(DBContract.Rooms.COLUMN_EQUIPMENT,j%2+"x bed, "+j%2+"x table, 2 windows, 3 cabinets, 1 balcony");
+                values.put(DBContract.Rooms.COLUMN_AREA, 15);
+                values.put(DBContract.Rooms.COLUMN_IS_OCCUPIED,rnd.nextInt(2));
+                values.put(DBContract.Rooms.COLUMN_PRICE, 65.5);
+                long id = db.insert(DBContract.Rooms.TABLE_NAME, null, values);
+            }
+        }
     }
 
     @Override
