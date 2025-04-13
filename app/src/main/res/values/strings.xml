@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DB_MDudash</string>
+    <string name="app_name">UDS</string>
     <string name="system">University Dormitory System</string>
     <string name="sign">Sign in</string>
     <string name="dormList">Dormitories</string>

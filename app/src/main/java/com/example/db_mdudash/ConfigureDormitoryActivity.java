@@ -41,19 +41,24 @@ public class ConfigureDormitoryActivity extends AppCompatActivity {
         }
 
         saveButton.setOnClickListener(evt -> {
-            String name = nameText.getText().toString();
-            String address = addressText.getText().toString();
-            if(!name.isEmpty() && !address.isEmpty()){
-                if(dormitoryId == -1){
-                    long id = dbHelper.addDormitory(name, address);
-                    Toast.makeText(this, "Dormitory added", Toast.LENGTH_SHORT).show();
+            try {
+                String name = nameText.getText().toString();
+                String address = addressText.getText().toString();
+                if(!name.isEmpty() && !address.isEmpty()){
+                    if(dormitoryId == -1){
+                        long id = dbHelper.addDormitory(name, address);
+                        Toast.makeText(this, "Dormitory added", Toast.LENGTH_SHORT).show();
+                    }else{
+                        int affected = dbHelper.updateDormitory(dormitoryId, name, address);
+                        Toast.makeText(this, "Dormitory updated", Toast.LENGTH_SHORT).show();
+                    }finish();
                 }else{
-                    int affected = dbHelper.updateDormitory(dormitoryId, name, address);
-                    Toast.makeText(this, "Dormitory updated", Toast.LENGTH_SHORT).show();
-                }finish();
-            }else{
-                Toast.makeText(this, "Enter all data", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Enter all data", Toast.LENGTH_SHORT).show();
+                }
+            }catch (Exception e){
+                Toast.makeText(this, "Invalid data", Toast.LENGTH_SHORT).show();
             }
+
 
 
         });

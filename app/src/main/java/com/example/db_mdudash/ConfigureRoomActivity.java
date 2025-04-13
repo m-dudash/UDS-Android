@@ -52,25 +52,29 @@ public class ConfigureRoomActivity extends AppCompatActivity {
             String equipment = editTextEquipment.getText().toString().trim();
             String priceStr = editTextPrice.getText().toString().trim();
 
+            try {
+                if (!number.isEmpty() && !bedsStr.isEmpty() && !areaStr.isEmpty() && !equipment.isEmpty() && !priceStr.isEmpty()) {
+                    int beds = Integer.parseInt(bedsStr);
+                    int area = Integer.parseInt(areaStr);
+                    double price = Double.parseDouble(priceStr);
 
-            if (!number.isEmpty() && !bedsStr.isEmpty() && !areaStr.isEmpty() && !equipment.isEmpty() && !priceStr.isEmpty()) {
-                int beds = Integer.parseInt(bedsStr);
-                int area = Integer.parseInt(areaStr);
-                double price = Double.parseDouble(priceStr);
-
-                if (roomId == -1) {
-                    long id = dbHelper.addRoom(dormitoryId, number, beds, equipment, area, 0, price);
+                    if (roomId == -1) {
+                        long id = dbHelper.addRoom(dormitoryId, number, beds, equipment, area, 0, price);
                         Toast.makeText(this, "Room added", Toast.LENGTH_SHORT).show();
                         finish();
-                } else {
-                    int currentOccupiedStatus = getRoomOccupiedStatus(roomId);
-                    int rowsAffected = dbHelper.updateRoom(roomId, number, beds, equipment, area, currentOccupiedStatus, price);
+                    } else {
+                        int currentOccupiedStatus = getRoomOccupiedStatus(roomId);
+                        int rowsAffected = dbHelper.updateRoom(roomId, number, beds, equipment, area, currentOccupiedStatus, price);
                         Toast.makeText(this, "Room updated", Toast.LENGTH_SHORT).show();
                         finish();
+                    }
+                } else {
+                    Toast.makeText(this, "Enter all data", Toast.LENGTH_SHORT).show();
                 }
-            } else {
-                Toast.makeText(this, "Enter all data", Toast.LENGTH_SHORT).show();
+            }catch (Exception e){
+                Toast.makeText(this, "Invalid data", Toast.LENGTH_SHORT).show();
             }
+
         });
     }
 
