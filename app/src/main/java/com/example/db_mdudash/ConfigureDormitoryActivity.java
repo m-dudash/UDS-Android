@@ -50,11 +50,11 @@ public class ConfigureDormitoryActivity extends AppCompatActivity {
                 }else{
                     int affected = dbHelper.updateDormitory(dormitoryId, name, address);
                     Toast.makeText(this, "Dormitory updated", Toast.LENGTH_SHORT).show();
-                }
+                }finish();
             }else{
                 Toast.makeText(this, "Enter all data", Toast.LENGTH_SHORT).show();
             }
-            finish();
+
 
         });
     }

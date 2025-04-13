@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -47,6 +48,8 @@ public class RoomsActivity extends AppCompatActivity {
         Button addButton = findViewById(R.id.addRoom);
         listViewRooms = findViewById(R.id.roomsList);
 
+        TextView dormTitle = findViewById(R.id.dormHeader);
+        dormTitle.setText(getIntent().getStringExtra("title"));
         rooms = new ArrayList<>();
         roomAdapter = new RoomAdapter(this, rooms);
         listViewRooms.setAdapter(roomAdapter);

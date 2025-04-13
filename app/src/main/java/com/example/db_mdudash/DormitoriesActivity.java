@@ -59,6 +59,7 @@ public class DormitoriesActivity extends AppCompatActivity {
             Dormitory dormitory = dormitories.get(position);
             Intent intt = new Intent(this, RoomsActivity.class);
             intt.putExtra("dormitory_id", dormitory.getId());
+            intt.putExtra("title", dormitory.getName());
             startActivity(intt);
         });
 
