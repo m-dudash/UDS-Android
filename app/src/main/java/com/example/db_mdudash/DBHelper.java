@@ -64,8 +64,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 String roomNumber = prefixes[i-1]+j+postfixes[j%2];
                 values.put(DBContract.Rooms.COLUMN_DORMITORY_ID, i);
                 values.put(DBContract.Rooms.COLUMN_NUMBER,roomNumber);
-                values.put(DBContract.Rooms.COLUMN_BEDS,j%2);
-                values.put(DBContract.Rooms.COLUMN_EQUIPMENT,j%2+"x bed, "+j%2+"x table, 2 windows, 3 cabinets, 1 balcony");
+                values.put(DBContract.Rooms.COLUMN_BEDS,j%2+2);
+                values.put(DBContract.Rooms.COLUMN_EQUIPMENT,j%2+2+"x bed, "+j%2+2+"x table, 2 windows, 3 cabinets, 1 balcony");
                 values.put(DBContract.Rooms.COLUMN_AREA, 15);
                 values.put(DBContract.Rooms.COLUMN_IS_OCCUPIED,rnd.nextInt(2));
                 values.put(DBContract.Rooms.COLUMN_PRICE, 65.5);

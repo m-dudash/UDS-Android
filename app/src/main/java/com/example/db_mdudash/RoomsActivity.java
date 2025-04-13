@@ -49,7 +49,7 @@ public class RoomsActivity extends AppCompatActivity {
         rooms = new ArrayList<>();
         roomAdapter = new RoomAdapter(this, rooms);
         listViewRooms.setAdapter(roomAdapter);
-
+        dormId = getIntent().getIntExtra("dormitory_id", -1);
         addButton.setOnClickListener(evt ->{
             Intent intt = new Intent(this, ConfigureRoomActivity.class);
             intt.putExtra("dormitory_id", dormId);
