@@ -49,7 +49,7 @@ public class DormitoriesActivity extends AppCompatActivity {
         listViewDorm.setAdapter(dormitoryAdapter);
 
         addButton.setOnClickListener(evt ->{
-            Intent intt = new Intent(this, configureDormitory.class);
+            Intent intt = new Intent(this, ConfigureDormitoryActivity.class);
             startActivity(intt);
         });
 
@@ -103,7 +103,7 @@ public class DormitoriesActivity extends AppCompatActivity {
         Dormitory dormitory = dormitories.get(position);
 
         if(item.getItemId() == 0){
-            Intent intt = new Intent(this, configureDormitory.class);
+            Intent intt = new Intent(this, ConfigureDormitoryActivity.class);
             intt.putExtra("dormitory_id", dormitory.getId());
             intt.putExtra("name", dormitory.getName());
             intt.putExtra("address", dormitory.getAddress());

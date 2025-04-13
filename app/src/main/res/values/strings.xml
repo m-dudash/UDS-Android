@@ -4,4 +4,8 @@
     <string name="sign">Sign in</string>
     <string name="dormList">Dormitories</string>
     <string name="plus">+</string>
+    <string name="conf">Configure dormitory info</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="save">Save</string>
 </resources>
