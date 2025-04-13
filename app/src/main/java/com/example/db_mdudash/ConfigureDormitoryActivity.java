@@ -25,7 +25,7 @@ public class ConfigureDormitoryActivity extends AppCompatActivity {
             return insets;
         });
 
-        TextView nameText = findViewById(R.id.nameTextPlain);
+        TextView nameText = findViewById(R.id.numberPlain);
         TextView addressText = findViewById(R.id.addressTextPlain);
         Button saveButton = findViewById(R.id.saveDormButton);
         DBHelper dbHelper = new DBHelper(this);

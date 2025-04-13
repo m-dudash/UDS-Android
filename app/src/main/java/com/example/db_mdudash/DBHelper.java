@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class DBHelper extends SQLiteOpenHelper {
     public static final String DBname = "dormitory.db";
-    public static final int DBversion = 3;
+    public static final int DBversion = 4;
     Random rnd = new Random();
 
 

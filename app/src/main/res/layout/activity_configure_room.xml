@@ -5,6 +5,165 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ConfigureRoomActivity">
+    tools:context=".ConfigureDormitoryActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveDormButton"
+        android:layout_width="413dp"
+        android:layout_height="87dp"
+        android:backgroundTint="#23B8CD"
+        android:text="@string/save"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/confR"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="71dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="72dp"
+        android:text="Number"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/numberPlain"
+        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="71dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="60dp"
+        android:text="Equipment"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        tools:layout_editor_absoluteX="37dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="71dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="52dp"
+        android:text="Area"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:layout_editor_absoluteX="37dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="71dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="44dp"
+        android:text="Beds"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        tools:layout_editor_absoluteX="37dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="71dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/name"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/numberPlain"
+        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="71dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="60dp"
+        android:text="Price"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:layout_editor_absoluteX="37dp" />
+
+    <EditText
+        android:id="@+id/nameTextPlain4"
+        android:layout_width="211dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="68dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/pricePlain"
+        android:layout_width="211dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@+id/numberPlain"
+        tools:layout_editor_absoluteX="132dp" />
+
+    <EditText
+        android:id="@+id/numberPlain"
+        android:layout_width="211dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="68dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/areaPlain"
+        android:layout_width="211dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@+id/pricePlain"
+        tools:layout_editor_absoluteX="132dp" />
+
+    <EditText
+        android:id="@+id/bedsPlain"
+        android:layout_width="211dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@+id/areaPlain"
+        tools:layout_editor_absoluteX="132dp" />
+
+    <EditText
+        android:id="@+id/equipmentPlain"
+        android:layout_width="211dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@+id/bedsPlain"
+        tools:layout_editor_absoluteX="132dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
