@@ -7,4 +7,50 @@
     android:layout_height="match_parent"
     tools:context=".RoomsActivity">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addRoom"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="28dp"
+        android:backgroundTint="#23B8CD"
+        android:text="@string/plus"
+        android:textAllCaps="true"
+        android:textSize="34sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/rooms"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dormHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <ListView
+        android:id="@+id/roomsList"
+        android:layout_width="333dp"
+        android:layout_height="461dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dormHeader" />
 </androidx.constraintlayout.widget.ConstraintLayout>

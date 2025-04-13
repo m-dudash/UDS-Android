@@ -11,7 +11,7 @@
         android:id="@+id/addDorm"
         android:layout_width="65dp"
         android:layout_height="65dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="60dp"
         android:backgroundTint="#23B8CD"
         android:text="@string/plus"
         android:textAllCaps="true"
